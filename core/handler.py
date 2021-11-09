@@ -12,7 +12,7 @@ def core_handle(request):
     print(time.strftime("%H:%M:%S", time.localtime())+"-路径[%s]"%(request.path)+"-参数[%s]"%(post))
     print(post)
     if request.method == 'POST':
-        method = getattr(ak, request.path_info.replace('/api/', ''))(post.keys(), post.values())
+        method = getattr(ak, request.path_info.replace('/api/', ''))(post.values(), post.keys())
         return HttpResponse(content=DataFrame.to_json(method(), orient='records'), content_type='application/json')
 
     elif request.method == 'GET':
