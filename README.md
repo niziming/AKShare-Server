@@ -16,7 +16,7 @@ https://akshare-4gize6tod19f2d2e-1252952517.tcloudbaseapp.com/index.html
 
 Api调用方式
 
-ip:port/api/{method} 如：localhost:8000/api/stock_zh_a_new
+ip:port/{method} 如：localhost:8000/stock_zh_a_new
 ## 此项目
 此项目用于备份akshare-api,且调试正常运行版本依赖.方便后续自己使用作为金融数据源的一个服务.
 
