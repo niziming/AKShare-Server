@@ -8,8 +8,10 @@ from pandas import DataFrame
 
 
 def core_handle(request):
+    post = request.POST.dict()
+    body = request.body.decode('utf-8')
+    param = post
     if request.method == 'POST':
-        param = {'fund': '710001', 'indicator': '累计收益率走势'}
         result = getattr(ak, request.path_info.replace('/', ''))(**param)
         return HttpResponse(content=DataFrame.to_json(result, orient='records'), content_type='application/json')
 
