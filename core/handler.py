@@ -21,7 +21,7 @@ def core_handle(request):
     post = request.POST.dict()
     body = request.body.decode('utf-8')
     if not post:
-        if (not body) and (not body.strip() == ''):
+        if body and (not body.strip() == ''):
             param = json.loads(body)
     else:
         param = post
